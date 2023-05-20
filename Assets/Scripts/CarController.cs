@@ -64,22 +64,20 @@ public class CarController : MonoBehaviour
 
     private void OnEnable()
     {
-        //_playerInputActionMap.FindAction("Rotate").started += RotateCar;
         _playerInputActionMap.FindAction("Gass").performed += PressGass;
         _playerInputActionMap.FindAction("Gass").canceled += CancleGass;
         _playerInputActionMap.FindAction("Break").performed += StartBreak;
-        //_playerInputActionMap.FindAction("Gass").canceled += StartBreak;
+        _playerInputActionMap.FindAction("Break").canceled += StopBreak;
     }
 
    
 
     private void OnDisable()
     {
-        //_playerInputActionMap.FindAction("Rotate").started -= RotateCar;
         _playerInputActionMap.FindAction("Gass").performed -= PressGass;
         _playerInputActionMap.FindAction("Gass").canceled -= CancleGass;
         _playerInputActionMap.FindAction("Break").performed -= StartBreak;
-        //_playerInputActionMap.FindAction("Gass").canceled -= StartBreak;
+        _playerInputActionMap.FindAction("Break").canceled -= StopBreak;
 
     }
 
@@ -91,40 +89,8 @@ public class CarController : MonoBehaviour
         HandleSteering();
         UpdateWheels();
 
-        //if (_isRotateEnabled)
-        //{
-        //    _forceDirection += _rotateInputAction.ReadValue<Vector2>().x * GetCameraForward(_camera) * _movmentForce;
-        //    _forceDirection += _rotateInputAction.ReadValue<Vector2>().y * GetCameraRight(_camera) * _movmentForce;
-
-        //    _rigidbody.AddForce(_forceDirection,ForceMode.Impulse);
-        //    _forceDirection = Vector3.zero;
-
-        //    if(_isGassPressed)
-        //    {
-        //        if (_rigidbody.velocity.y < 0f)
-        //            _rigidbody.velocity += Vector3.down * Physics.gravity.y * Time.fixedDeltaTime;
-
-        //        Vector3 horizontalVelocity = _rigidbody.velocity;
-        //        horizontalVelocity.y = 0f;
-
-        //        if (horizontalVelocity.sqrMagnitude > _maxSpeed * _maxSpeed)
-        //            _rigidbody.velocity = horizontalVelocity.normalized * _maxSpeed + Vector3.up * _rigidbody.velocity.y;
-        //    }
-        //}
-    }
-
-    private Vector3 GetCameraForward(Camera playerCamera)
-    {
-        Vector3 forward = playerCamera.transform.forward;
-        forward.y = 0f;
-        return forward.normalized;
-    }
-
-    private Vector3 GetCameraRight(Camera playerCamera)
-    {
-        Vector3 right = playerCamera.transform.right;
-        right.y = 0f;
-        return right.normalized;
+        currentbreakForce = isBreaking ? breakForce : 0f; //If its breakiing the force will be same as breakForce, else it will be 0f
+        ApplyBreaking();
     }
 
     private void EnableInputAction()
@@ -139,29 +105,18 @@ public class CarController : MonoBehaviour
 
     private void GetInput()
     {
-        // Steering Input
-        //horizontalInput = Input.GetAxis("Horizontal");
         horizontalInput = _rotateInputAction.ReadValue<Vector2>().x;
-
-        //// Acceleration Input
-        //verticalInput = Input.GetAxis("Vertical");
         verticalInput = 0;
-
-        // Breaking Input
-        //isBreaking = Input.GetKey(KeyCode.Space);
     }
 
     private void HandleMotor()
     {
         frontLeftWheelCollider.motorTorque = motorForce;
         frontRightWheelCollider.motorTorque = motorForce;
-        currentbreakForce = isBreaking ? breakForce : 0f;
-        ApplyBreaking();
     }
 
     private void ApplyBreaking()
     {
-        Debug.Log("StartBreak");
         frontRightWheelCollider.brakeTorque = currentbreakForce;
         frontLeftWheelCollider.brakeTorque = currentbreakForce;
         rearLeftWheelCollider.brakeTorque = currentbreakForce;
@@ -208,6 +163,12 @@ public class CarController : MonoBehaviour
 
     private void StartBreak(InputAction.CallbackContext obj)
     {
-        ApplyBreaking();
+        isBreaking = true;
+    }
+
+    private void StopBreak(InputAction.CallbackContext obj)
+    {
+        isBreaking = false;
+        Debug.Log(isBreaking);
     }
 }
