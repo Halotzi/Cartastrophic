@@ -7,8 +7,7 @@ using UnityEngine.InputSystem;
 public class CarController : MonoBehaviour
 {
     private float horizontalInput, verticalInput;
-    private float currentSteerAngle, currentbreakForce;
-    private bool isBreaking;
+    private float currentSteerAngle, currentbreakForce, currentMotorForce;
 
     [Header("Input Action Assets")]
     [SerializeField] InputActionMap _playerInputActionMap;
@@ -19,7 +18,8 @@ public class CarController : MonoBehaviour
     public event Action<PlayerInput> onPlayerLeft;
 
     [Header("Settings")]
-    [SerializeField] private float motorForce;
+    [SerializeField] private float _maxForwardMotorForce;
+    [SerializeField] private float _maxReverseMotorForce;
     [SerializeField] private float breakForce;
     [SerializeField] private float maxSteerAngle;
 
@@ -50,8 +50,9 @@ public class CarController : MonoBehaviour
     #endregion
 
     #region InputAction bools
-    private bool _isRotateEnabled = true;
+    private bool _isBreakingPressed = false;
     private bool _isGassPressed = false;
+    private bool _isReversedPressed = false;
     #endregion
 
     private void Awake()
@@ -68,6 +69,8 @@ public class CarController : MonoBehaviour
         _playerInputActionMap.FindAction("Gass").canceled += CancleGass;
         _playerInputActionMap.FindAction("Break").performed += StartBreak;
         _playerInputActionMap.FindAction("Break").canceled += StopBreak;
+        _playerInputActionMap.FindAction("Revers").performed += StartRevers;
+        _playerInputActionMap.FindAction("Revers").canceled += StopRevers;
     }
 
    
@@ -78,18 +81,16 @@ public class CarController : MonoBehaviour
         _playerInputActionMap.FindAction("Gass").canceled -= CancleGass;
         _playerInputActionMap.FindAction("Break").performed -= StartBreak;
         _playerInputActionMap.FindAction("Break").canceled -= StopBreak;
-
+        _playerInputActionMap.FindAction("Revers").performed -= StartRevers;
+        _playerInputActionMap.FindAction("Revers").canceled -= StopRevers;
     }
 
     private void FixedUpdate()
     {
         GetInput();
-        if(_isGassPressed)
         HandleMotor();
         HandleSteering();
         UpdateWheels();
-
-        currentbreakForce = isBreaking ? breakForce : 0f; //If its breakiing the force will be same as breakForce, else it will be 0f
         ApplyBreaking();
     }
 
@@ -111,12 +112,40 @@ public class CarController : MonoBehaviour
 
     private void HandleMotor()
     {
-        frontLeftWheelCollider.motorTorque = motorForce;
-        frontRightWheelCollider.motorTorque = motorForce;
+        UpdateCurrentMotorForce();
+        frontLeftWheelCollider.motorTorque = currentMotorForce;
+        frontRightWheelCollider.motorTorque = currentMotorForce;
+    }
+
+    private void UpdateCurrentMotorForce()
+    {
+        if (_isGassPressed)
+        {
+            if (currentMotorForce >= _maxForwardMotorForce)
+                currentMotorForce = _maxForwardMotorForce;
+
+            else
+                currentMotorForce += Time.deltaTime * 50;
+        }
+
+        else if (_isReversedPressed) 
+        {
+
+            if (currentMotorForce <= _maxReverseMotorForce)
+                currentMotorForce = _maxReverseMotorForce;
+
+            else
+                currentMotorForce -= Time.deltaTime * 50;
+        }
+
+
+        Debug.Log(currentMotorForce);
+        //currentMotorForce = _isReversedPressed ? -currentMotorForce : currentMotorForce;
     }
 
     private void ApplyBreaking()
     {
+        currentbreakForce = _isBreakingPressed ? breakForce : 0f; //If its breakiing the force will be same as breakForce, else it will be 0f
         frontRightWheelCollider.brakeTorque = currentbreakForce;
         frontLeftWheelCollider.brakeTorque = currentbreakForce;
         rearLeftWheelCollider.brakeTorque = currentbreakForce;
@@ -147,10 +176,6 @@ public class CarController : MonoBehaviour
         wheelTransform.position = pos;
     }
 
-    private void RotateCar(InputAction.CallbackContext obj)
-    {
-    }
-
     private void PressGass(InputAction.CallbackContext obj)
     {
         _isGassPressed = true;
@@ -163,12 +188,22 @@ public class CarController : MonoBehaviour
 
     private void StartBreak(InputAction.CallbackContext obj)
     {
-        isBreaking = true;
+        _isBreakingPressed = true;
     }
 
     private void StopBreak(InputAction.CallbackContext obj)
     {
-        isBreaking = false;
-        Debug.Log(isBreaking);
+        _isBreakingPressed = false;
+        Debug.Log(_isBreakingPressed);
+    }
+
+    private void StartRevers(InputAction.CallbackContext obj)
+    {
+        _isReversedPressed = true;
+    }
+
+    private void StopRevers(InputAction.CallbackContext obj)
+    {
+        _isReversedPressed = false;
     }
 }

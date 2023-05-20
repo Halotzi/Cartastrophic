@@ -1104,7 +1104,8 @@ MonoBehaviour:
     m_Asset: {fileID: 0}
     m_Actions: []
     m_Bindings: []
-  motorForce: 1000
+  _maxForwardMotorForce: 300
+  _maxReverseMotorForce: -300
   breakForce: 3000
   maxSteerAngle: 30
   frontLeftWheelCollider: {fileID: 5208807173092459555}
