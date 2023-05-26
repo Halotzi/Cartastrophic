@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -72,9 +70,7 @@ public class CarController : MonoBehaviour
         _playerInputActionMap.FindAction("Revers").performed += StartRevers;
         _playerInputActionMap.FindAction("Revers").canceled += StopRevers;
     }
-
-   
-
+    
     private void OnDisable()
     {
         _playerInputActionMap.FindAction("Gass").performed -= PressGass;
