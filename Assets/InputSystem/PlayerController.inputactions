@@ -87,6 +87,17 @@
                 },
                 {
                     "name": "",
+                    "id": "fe1f6e4f-1f6a-42b4-9bf5-c557d7e063db",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Revers",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "c5226e8c-bf59-44d0-9e66-83a6c2775367",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "Hold",

@@ -20,6 +20,7 @@ public class CarController : MonoBehaviour
     [SerializeField] private float _maxReverseMotorForce;
     [SerializeField] private float breakForce;
     [SerializeField] private float maxSteerAngle;
+    [SerializeField] private float knockBackForce;
 
     [Header("Wheel Colliders")]
     [SerializeField] private WheelCollider frontLeftWheelCollider;
@@ -39,8 +40,8 @@ public class CarController : MonoBehaviour
     [SerializeField] float _maxSpeed=5f;
     private Vector3 _forceDirection = Vector3.zero;
 
-    [Header("Camera")]
-    [SerializeField] Camera _camera;
+    //[Header("Camera")]
+   // [SerializeField] Camera _camera;
 
     #region InputActions
     private InputAction _rotateInputAction;
@@ -50,8 +51,14 @@ public class CarController : MonoBehaviour
     #region InputAction bools
     private bool _isBreakingPressed = false;
     private bool _isGassPressed = false;
+    private bool _isBoostPressed = false;
     private bool _isReversedPressed = false;
     #endregion
+
+    private void AddKnockBack(Vector3 dir, float force)
+    {
+        _rigidbody.AddForce(dir * force,ForceMode.Impulse);
+    }
 
     private void Awake()
     {
@@ -135,7 +142,7 @@ public class CarController : MonoBehaviour
         }
 
 
-        Debug.Log(currentMotorForce);
+//        Debug.Log(currentMotorForce);
         //currentMotorForce = _isReversedPressed ? -currentMotorForce : currentMotorForce;
     }
 
@@ -190,7 +197,7 @@ public class CarController : MonoBehaviour
     private void StopBreak(InputAction.CallbackContext obj)
     {
         _isBreakingPressed = false;
-        Debug.Log(_isBreakingPressed);
+       // Debug.Log(_isBreakingPressed);
     }
 
     private void StartRevers(InputAction.CallbackContext obj)
@@ -201,5 +208,24 @@ public class CarController : MonoBehaviour
     private void StopRevers(InputAction.CallbackContext obj)
     {
         _isReversedPressed = false;
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.TryGetComponent<CarController>(out var car))
+        {
+            if (_rigidbody.velocity.magnitude > car._rigidbody.velocity.magnitude)
+            {
+                var dir = (car.transform.position - transform.position).normalized;
+            
+                car.AddKnockBack(dir, knockBackForce);
+            }
+            else
+            {
+                var dir = (transform.position - car.transform.position).normalized;
+            
+                AddKnockBack(dir, knockBackForce);
+            }
+        }
     }
 }

@@ -1028,6 +1028,7 @@ GameObject:
   - component: {fileID: 5208807173419195637}
   - component: {fileID: 5208807173419195635}
   - component: {fileID: 4056771293905821959}
+  - component: {fileID: 7375963749906384135}
   m_Layer: 0
   m_Name: Banana_Z_D
   m_TagString: Untagged
@@ -1053,7 +1054,6 @@ Transform:
   - {fileID: 4089772022409329632}
   - {fileID: 4643482045848764039}
   - {fileID: 6763231578654141772}
-  - {fileID: 8804743431923847744}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1065,7 +1065,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4938213858807734719}
   serializedVersion: 2
-  m_Mass: 1300
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1108,6 +1108,7 @@ MonoBehaviour:
   _maxReverseMotorForce: -300
   breakForce: 3000
   maxSteerAngle: 30
+  knockBackForce: 1000
   frontLeftWheelCollider: {fileID: 5208807173092459555}
   frontRightWheelCollider: {fileID: 5208807173686222360}
   rearLeftWheelCollider: {fileID: 5208807172321418621}
@@ -1119,7 +1120,6 @@ MonoBehaviour:
   _rigidbody: {fileID: 5208807173419195632}
   _movmentForce: 5
   _maxSpeed: 5
-  _camera: {fileID: 4567253636322208416}
 --- !u!114 &4056771293905821959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1150,6 +1150,18 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &7375963749906384135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4938213858807734719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dfbd675110e3fe48bc0a3754b493b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5128071914461468988
 GameObject:
   m_ObjectHideFlags: 0
@@ -2240,81 +2252,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &8666655656427779227
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8804743431923847744}
-  - component: {fileID: 4567253636322208416}
-  m_Layer: 0
-  m_Name: Camera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8804743431923847744
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666655656427779227}
-  m_LocalRotation: {x: 0.2673225, y: 0, z: 0, w: 0.9636072}
-  m_LocalPosition: {x: 0, y: 0.0663, z: -0.1143}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5747683821362690821}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 31.01, y: 0, z: 0}
---- !u!20 &4567253636322208416
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666655656427779227}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
 --- !u!1 &8909226076119193255
 GameObject:
   m_ObjectHideFlags: 0

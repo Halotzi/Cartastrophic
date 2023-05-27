@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69bbebdd-4879-4f3c-85a8-82e3e8cc0bf0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cartastrophic/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cartastrophic/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InputSystem/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputSystem/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InputSystem/PlayerController.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputSystem/PlayerController.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Banana_Z_D.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Banana_Z_D.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CarController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +22,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controller/Controller.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="2PjoCzvorswwk3Yg4gGK73LRtr6" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -23,22 +33,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\jonha\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\jonha\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\jonha\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\jonha\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\jonha\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\jonha\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.23f1\Editor\Unity.exe" />
@@ -90,6 +100,7 @@
       <updated>1683979731119</updated>
       <workItem from="1683979736621" duration="3468000" />
       <workItem from="1684684029476" duration="350000" />
+      <workItem from="1685113980938" duration="3738000" />
     </task>
     <servers />
   </component>
@@ -98,5 +109,37 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/CarController.cs</url>
+          <line>214</line>
+          <properties documentPath="C:\Users\jonha\Documents\GitHub\Unity\Cartastrophic\Assets\Scripts\CarController.cs" initialLine="214" containingFunctionPresentation="Method 'OnCollisionEnter'">
+            <startOffsets>
+              <option value="6945" />
+            </startOffsets>
+            <endOffsets>
+              <option value="7010" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Controller/Controller.cs</url>
+          <line>87</line>
+          <properties documentPath="C:\Users\jonha\Documents\GitHub\Unity\Cartastrophic\Assets\Scripts\Controller\Controller.cs" initialLine="87" containingFunctionPresentation="Method 'Deceleration'">
+            <startOffsets>
+              <option value="3050" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3129" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
