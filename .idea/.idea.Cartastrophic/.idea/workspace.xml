@@ -6,13 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="69bbebdd-4879-4f3c-85a8-82e3e8cc0bf0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Cartastrophic/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cartastrophic/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputSystem/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputSystem/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputSystem/PlayerController.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputSystem/PlayerController.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Banana_Z_D.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Banana_Z_D.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CarController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +94,7 @@
       <workItem from="1683979736621" duration="3468000" />
       <workItem from="1684684029476" duration="350000" />
       <workItem from="1685113980938" duration="3738000" />
+      <workItem from="1685178773126" duration="2636000" />
     </task>
     <servers />
   </component>
@@ -125,19 +119,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Controller/Controller.cs</url>
-          <line>87</line>
-          <properties documentPath="C:\Users\jonha\Documents\GitHub\Unity\Cartastrophic\Assets\Scripts\Controller\Controller.cs" initialLine="87" containingFunctionPresentation="Method 'Deceleration'">
-            <startOffsets>
-              <option value="3050" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3129" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
