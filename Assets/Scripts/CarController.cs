@@ -124,8 +124,17 @@ public class CarController : MonoBehaviour
     {
         if (_isGassPressed)
         {
+            _isBreakingPressed =false;
+            _isReversedPressed=false;
+
             if (currentMotorForce >= _maxForwardMotorForce)
                 currentMotorForce = _maxForwardMotorForce;
+
+            else if (currentMotorForce < 0)
+            {
+                currentMotorForce += Time.deltaTime * 50;
+                ApplyBreaking(breakForce*2);
+            }
 
             else
                 currentMotorForce += Time.deltaTime * 50;
@@ -133,22 +142,43 @@ public class CarController : MonoBehaviour
 
         else if (_isReversedPressed) 
         {
-
+            _isGassPressed = false;
+            _isBreakingPressed =false;
             if (currentMotorForce <= _maxReverseMotorForce)
                 currentMotorForce = _maxReverseMotorForce;
+
+            else if (currentMotorForce > 0)
+            {
+                currentMotorForce -= Time.deltaTime * 50;
+                ApplyBreaking(breakForce*2);
+            }
 
             else
                 currentMotorForce -= Time.deltaTime * 50;
         }
 
+        else
+        {
+            _isBreakingPressed = true;
+            currentMotorForce = 0;
+        }
 
-//        Debug.Log(currentMotorForce);
+        Debug.Log(currentMotorForce);
         //currentMotorForce = _isReversedPressed ? -currentMotorForce : currentMotorForce;
     }
 
     private void ApplyBreaking()
     {
         currentbreakForce = _isBreakingPressed ? breakForce : 0f; //If its breakiing the force will be same as breakForce, else it will be 0f
+        frontRightWheelCollider.brakeTorque = currentbreakForce;
+        frontLeftWheelCollider.brakeTorque = currentbreakForce;
+        rearLeftWheelCollider.brakeTorque = currentbreakForce;
+        rearRightWheelCollider.brakeTorque = currentbreakForce;
+    }
+
+    private void ApplyBreaking(float breakForce)
+    {
+        currentbreakForce = breakForce; 
         frontRightWheelCollider.brakeTorque = currentbreakForce;
         frontLeftWheelCollider.brakeTorque = currentbreakForce;
         rearLeftWheelCollider.brakeTorque = currentbreakForce;
@@ -182,6 +212,7 @@ public class CarController : MonoBehaviour
     private void PressGass(InputAction.CallbackContext obj)
     {
         _isGassPressed = true;
+        Debug.Log("Gass pressed");
     }
 
     private void CancleGass(InputAction.CallbackContext obj)
