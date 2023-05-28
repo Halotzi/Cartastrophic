@@ -1043,7 +1043,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4938213858807734719}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.009274429, y: 0.574, z: 0.0058268737}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_ConstrainProportionsScale: 0
@@ -1071,7 +1071,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 64
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!65 &5208807173419195637
 BoxCollider:
@@ -1084,8 +1084,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.035, y: 0.03, z: 0.11}
-  m_Center: {x: 0, y: -0.005, z: 0}
+  m_Size: {x: 0.046379358, y: 0.03, z: 0.11277329}
+  m_Center: {x: 0.000361076, y: -0.005, z: -0.0013866484}
 --- !u!114 &5208807173419195635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1104,11 +1104,11 @@ MonoBehaviour:
     m_Asset: {fileID: 0}
     m_Actions: []
     m_Bindings: []
-  _maxForwardMotorForce: 300
-  _maxReverseMotorForce: -300
+  _maxForwardMotorForce: 500
+  _maxReverseMotorForce: -500
   breakForce: 3000
   maxSteerAngle: 30
-  knockBackForce: 1000
+  knockBackForce: 5000
   frontLeftWheelCollider: {fileID: 5208807173092459555}
   frontRightWheelCollider: {fileID: 5208807173686222360}
   rearLeftWheelCollider: {fileID: 5208807172321418621}
@@ -1133,7 +1133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 6ecd94f4fd41cf64990abf03f500c483, type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -1144,9 +1144,29 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 950d3344-c548-41ac-9204-603612737a19
+    m_ActionName: Player/Rotate[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/DualSenseGamepadHID/leftStick,/DualSenseGamepadHID1/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2744c1e7-9418-44db-8032-9a95ab004177
+    m_ActionName: Player/Gass[/DualSenseGamepadHID/rightTrigger,/DualSenseGamepadHID1/rightTrigger,/Keyboard/upArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c5752710-231b-4f7d-a116-a56e425f40e5
+    m_ActionName: Player/Break[/DualSenseGamepadHID/buttonEast,/DualSenseGamepadHID1/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 17501816-cc60-4b46-a274-39db71500140
+    m_ActionName: Player/Revers[/DualSenseGamepadHID/leftTrigger,/DualSenseGamepadHID1/leftTrigger,/Keyboard/downArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c390bb62-411f-4ec4-8ef8-75f9aa981653
+    m_ActionName: Player/Join[/DualSenseGamepadHID/start,/DualSenseGamepadHID1/start,/Keyboard/j]
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

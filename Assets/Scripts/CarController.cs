@@ -57,6 +57,7 @@ public class CarController : MonoBehaviour
 
     private void AddKnockBack(Vector3 dir, float force)
     {
+        _rigidbody.AddForce(Vector3.up * force / 2);
         _rigidbody.AddForce(dir * force,ForceMode.Impulse);
     }
 
@@ -248,13 +249,15 @@ public class CarController : MonoBehaviour
             if (_rigidbody.velocity.magnitude > car._rigidbody.velocity.magnitude)
             {
                 var dir = (car.transform.position - transform.position).normalized;
-            
+                dir = new Vector3(dir.x, 0, dir.z);
+                
                 car.AddKnockBack(dir, knockBackForce);
             }
             else
             {
                 var dir = (transform.position - car.transform.position).normalized;
-            
+                dir = new Vector3(dir.x, 0, dir.z);
+
                 AddKnockBack(dir, knockBackForce);
             }
         }
