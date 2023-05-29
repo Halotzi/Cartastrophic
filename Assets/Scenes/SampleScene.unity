@@ -519,9 +519,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 963194227}
-  _framBuffer: 15
+  _framBuffer: 10
   _speed: 1000
-  _cameraAngle: 60
+  _cameraAngle: 40
   _debugMode: 0
   _gizmosRadius: 0
 --- !u!1001 &1045926670
@@ -541,7 +541,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5747683821362690821, guid: 83e56d82c03eb5b428b0fda96f932624, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.49
+      value: -12.08
       objectReference: {fileID: 0}
     - target: {fileID: 5747683821362690821, guid: 83e56d82c03eb5b428b0fda96f932624, type: 3}
       propertyPath: m_LocalPosition.y

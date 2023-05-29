@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="69bbebdd-4879-4f3c-85a8-82e3e8cc0bf0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Cartastrophic/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cartastrophic/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScne.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScne.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CarController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,6 +33,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.5033557",
     "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -40,9 +41,9 @@
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "C:\\Users\\jonharel\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\jonharel\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\jonharel\\AppData\\Local\\Symbols\\src"
+      "C:\\Users\\jonha\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\jonha\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\jonha\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
@@ -73,10 +74,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="18532">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="11284">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="18532" />
+      <option name="pid" value="11284" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -100,6 +101,7 @@
       <workItem from="1685113980938" duration="3738000" />
       <workItem from="1685178773126" duration="2636000" />
       <workItem from="1685311848103" duration="333000" />
+      <workItem from="1685347248485" duration="1004000" />
     </task>
     <servers />
   </component>
@@ -117,16 +119,16 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/CarController.cs</url>
-          <line>245</line>
-          <properties documentPath="D:\Unity Projects\Cartastrophic\Assets\Scripts\CarController.cs" initialLine="245" containingFunctionPresentation="Method 'OnCollisionEnter'">
+          <line>246</line>
+          <properties documentPath="C:\Users\jonha\Documents\GitHub\Unity\Cartastrophic\Assets\Scripts\CarController.cs" initialLine="246" containingFunctionPresentation="Method 'OnCollisionEnter'">
             <startOffsets>
-              <option value="7948" />
+              <option value="8021" />
             </startOffsets>
             <endOffsets>
-              <option value="8013" />
+              <option value="8086" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
